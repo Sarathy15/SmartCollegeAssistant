@@ -665,10 +665,12 @@ def simulated_agent_fallback(user_query: str) -> dict:
 # ─────────────────────────────────────────────
 
 @app.get("/api/health")
+@app.head("/api/health")
 async def health_check():
     return {"status": "healthy"}
 
 @app.get("/", response_class=HTMLResponse)
+@app.head("/", response_class=HTMLResponse)
 async def read_root():
     if os.path.exists("index.html"):
         with open("index.html", "r", encoding="utf-8") as f:
