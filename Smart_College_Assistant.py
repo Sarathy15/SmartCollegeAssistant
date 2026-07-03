@@ -664,6 +664,10 @@ def simulated_agent_fallback(user_query: str) -> dict:
 # API CONTROLLERS
 # ─────────────────────────────────────────────
 
+@app.get("/api/health")
+async def health_check():
+    return {"status": "healthy"}
+
 @app.get("/", response_class=HTMLResponse)
 async def read_root():
     if os.path.exists("index.html"):
