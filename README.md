@@ -110,7 +110,11 @@ git push -u origin main
    - **Runtime**: `Python`
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `uvicorn Smart_College_Assistant:app --host 0.0.0.0 --port $PORT`
-4. Deploy the service to get your public backend URL (e.g., `https://smart-college-backend.onrender.com`).
+4. Configure Environment Variables:
+   - Under the **Environment** tab, click **Add Environment Variable**:
+     - **Key**: `PYTHON_VERSION`
+     - **Value**: `3.11.9`
+5. Deploy the service to get your public backend URL (e.g., `https://smart-college-backend.onrender.com`).
 
 ### 3. Frontend Deployment (Vercel)
 1. Log in to [Vercel](https://vercel.com) and click **Add New** -> **Project**.
