@@ -753,10 +753,10 @@
     // Constants
     const CHARS_PER_FRAME = 16; // Fast Typewriter Speed
 
-    // Automatically target port 8000 when opened from a file, a Live Server (like 5500), etc.
-    const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port === '8000'
-      ? ''
-      : 'http://localhost:8000';
+    // Automatically target local server when run locally, fallback to Render backend when deployed
+    const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.protocol === 'file:')
+      ? 'http://localhost:8000'
+      : 'https://smartcollegeassistant.onrender.com';
 
     // Application State
     let activeChatHistory = [];
